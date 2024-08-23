@@ -185,7 +185,7 @@
             const segundosFormatado = formatarUnidade(segundos, 'segundo', 'segundos');
 
             document.getElementById("tempo").innerHTML = 
-                `${anosFormatado}, ${mesesFormatado}, ${diasFormatado}, ${horasFormatado}, ${minutosFormatado}, ${segundosFormatado}`;
+                `${anosFormatado}, ${mesesFormatado}, ${diasFormatado}, ${horasFormatado}<br>${minutosFormatado}, ${segundosFormatado}`;
         }
 
         setInterval(atualizarTempo, 1000); // Atualiza a cada segundo
