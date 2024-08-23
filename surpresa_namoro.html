@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fulano e Fulana</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zain:wght@200;300;400;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Zain', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .card {
+            background-color: #7870a7;
+            overflow: hidden;
+        }
+        .slider {
+            position: relative;
+            width: 100vh;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto; 
+            max-width: 100%; 
+        }
+        .slide {
+            width: 90%;
+            height: 90%;
+            object-fit: cover;
+            object-position: center;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            border-radius: 20px;
+        }
+        .slide.active {
+            opacity: 1;
+        }
+        .tempo-namoro {
+            padding: 10px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0; 
+        }
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        #tempo {
+            font-size: 1.6em;
+            color: #666;
+        }
+        .frase-amor {
+            padding: 20px;
+            text-align: center;
+            background-color: #ff4e6d;
+            margin-top: 0; 
+        }
+        .frase-amor p {
+            font-size: 1.5em;
+            font-style: italic;
+        }
+        .coracao {
+            position: fixed;
+            font-size: 20px;
+            color: red;
+            opacity: 0;
+            z-index: 9999;
+            animation: cair 3s linear;
+        }
+        @keyframes cair {
+            0% {
+                transform: translateY(-100vh) scale(0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) scale(1);
+                opacity: 0;
+            }
+        }
+        #verCoracoes {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #ffddee;
+            color: rgb(82, 6, 6);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Zain', sans-serif;
+        }
+        #verCoracoes:hover {
+            color: #f03456;
+            background-color: #792050;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="slider">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczMw6gIgCQ2MGdcj1q8C4-peu4SYoyN4ThWGVDc9AXERCE1jYIv0LD_Z1a95bAXOvgEduu0qCzklnKhateoAxj3RRwG1ZrEegNr9i5ExGQYqTHhKcx-l-HJFMOVtahB99BYf27_OpzyPWR1ZjzcriOaQnQ=w663-h883-s-no-gm?authuser=0" class="slide active">
+                <img src="https://www.designi.com.br/images/preview/12923179.jpg" class="slide">
+                <img src="https://www.designi.com.br/images/preview/12912521.jpg" class="slide">
+                <img src="https://iili.io/dW5JZmJ.md.jpg" class="slide">
+                <img src="https://iili.io/dW5JDzv.md.jpg" class="slide">
+                <img src="https://img.freepik.com/fotos-gratis/foto-vertical-de-uma-ponte-de-madeira-no-meio-da-floresta_181624-39776.jpg" alt="Foto 4" class="slide">
+
+                <!-- Aqui você copia a linha de cima e cola o link de mais foto -->
+            </div>
+            <div class="tempo-namoro">
+                <h2 style="font-size: 2em;">Fulano ❤️ Fulana</h2>
+                <h2 style="font-size: 1.5em;">Juntos há</h2>
+                <p id="tempo"></p>
+            </div>
+        </div>
+        <div class="frase-amor">
+            <p>Coloque aqui a frase que você quer que apareça</p>
+            <button id="verCoracoes" onclick="explosaoCoracoes()">CLIQUE AQUI ❤️</button>
+        </div>
+    </div>
+
+    <script>
+        // Slide de fotos
+        let slideIndex = 0;
+        const slides = document.getElementsByClassName("slide");
+
+        function ajustarAltura() {
+            const slider = document.querySelector('.slider');
+            slider.style.height = `${window.innerHeight}px`;
+        }
+
+        function showSlides() {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex-1].classList.add("active");
+            setTimeout(showSlides, 5000); // Muda a imagem a cada 5 segundos
+        }
+
+        showSlides();
+
+        // Cálculo do tempo de namoro
+        const dataInicio = new Date("2019-01-25 12:00:00"); // Substitua pela data real de início do namoro no formato ANO-MÊS-DIA HORA:MINUTOS:SEGUNDOS
+
+        function formatarUnidade(valor, singular, plural) {
+            return valor <= 1 ? `${valor} ${singular}` : `${valor} ${plural}`;
+        }
+
+        function atualizarTempo() {
+            const agora = new Date();
+            const diferenca = agora - dataInicio;
+
+            const anos = Math.floor(diferenca / (1000 * 60 * 60 * 24 * 365));
+            const meses = Math.floor((diferenca % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+            const dias = Math.floor((diferenca % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+
+            const anosFormatado = formatarUnidade(anos, 'ano', 'anos');
+            const mesesFormatado = formatarUnidade(meses, 'mês', 'meses');
+            const diasFormatado = formatarUnidade(dias, 'dia', 'dias');
+            const horasFormatado = formatarUnidade(horas, 'hora', 'horas');
+            const minutosFormatado = formatarUnidade(minutos, 'minuto', 'minutos');
+            const segundosFormatado = formatarUnidade(segundos, 'segundo', 'segundos');
+
+            document.getElementById("tempo").innerHTML = 
+                `${anosFormatado}, ${mesesFormatado}, ${diasFormatado}, ${horasFormatado}, ${minutosFormatado}, ${segundosFormatado}`;
+        }
+
+        setInterval(atualizarTempo, 1000); // Atualiza a cada segundo
+        atualizarTempo(); // Chama imediatamente para exibir o tempo inicial
+
+        // Explosão de corações
+        function criarCoracao() {
+            const coracao = document.createElement('div');
+            coracao.classList.add('coracao');
+            coracao.innerHTML = '❤️😍';
+            coracao.style.left = Math.random() * 100 + 'vw';
+            coracao.style.top = '-20px'; // Posiciona o coração acima da tela
+            document.body.appendChild(coracao);
+
+            setTimeout(() => {
+                coracao.remove();
+            }, 5000);
+        }
+
+        function explosaoCoracoes() {
+            for (let i = 0; i < 70; i++) {
+                setTimeout(criarCoracao, i * 70);
+            }
+        }
+
+        window.addEventListener('load', explosaoCoracoes);
+
+        document.getElementById('verCoracoes').addEventListener('click', function() {
+            explosaoCoracoes();
+        });
+    </script>
+</body>
+</html>
