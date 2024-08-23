@@ -110,6 +110,11 @@
             color: #f03456;
             background-color: #792050;
         }
+        @media (min-width: 768px) {
+            #tempo br {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -185,7 +190,7 @@
             const segundosFormatado = formatarUnidade(segundos, 'segundo', 'segundos');
 
             document.getElementById("tempo").innerHTML = 
-                `${anosFormatado}, ${mesesFormatado}, ${diasFormatado}, ${horasFormatado}<br>${minutosFormatado}, ${segundosFormatado}`;
+                `${anosFormatado}, ${mesesFormatado}, ${diasFormatado}, ${horasFormatado}, <br>${minutosFormatado}, ${segundosFormatado}`;
         }
 
         setInterval(atualizarTempo, 1000); // Atualiza a cada segundo
