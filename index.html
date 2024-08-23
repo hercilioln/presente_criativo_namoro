@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zain:wght@200;300;400;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
             font-family: 'Zain', sans-serif;
@@ -115,6 +116,62 @@
                 display: none;
             }
         }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .footer-left, .footer-right {
+            flex: 1;
+            min-width: 250px;
+        }
+        .footer-left {
+            text-align: left;
+        }
+        .footer-left a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+        .footer-left a:hover {
+            color: #a97d05;
+        }
+        .social-icons {
+            margin-top: 10px;
+        }
+        .social-icons a {
+            color: #ffd700;
+            margin-right: 10px;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #a97d05;
+        }
+        .footer-right {
+            text-align: right;
+        }
+        .footer-right a {
+            color: #ffd700;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-right a:hover {
+            color: #a97d05;
+        }
+        @media (max-width: 768px) {
+            .footer-left, .footer-right {
+                text-align: center;
+                flex: 1 0 100%;
+            }
+            .footer-right {
+                margin-top: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -144,6 +201,20 @@
             <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/44E1ZbB9YMIclzFEpHXOoX?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
     </div>
+    <footer>
+        <div class="footer-left">
+            <p>Desenvolvido por • <a href="https://hercilio.me" target="_blank">Hercilio Dev</a></p>
+            <span class="social-icons">
+                <a href="https://instagram.com/hercilio.png" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://linkedin.com/in/hercilioln" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/hercilioln" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://twitter.com/hercilioln" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            </span>
+        </div>
+        <div class="footer-right">
+            <p>O site é totalmente gratuito, mas se quiser e puder considere fazer uma <a href="#">doação</a> para mantermos o sistema no ar e gratuito sempre.</p>
+        </div>
+    </footer>
 
     <script>
         // Slide de fotos
