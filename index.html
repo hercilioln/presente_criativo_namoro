@@ -203,7 +203,7 @@
     </div>
     <footer>
         <div class="footer-left">
-            <p>Desenvolvido por • <a href="https://hercilio.me" target="_blank">Hercilio Dev</a></p>
+            <p>Desenvolvido por • <a href="https://hercilio.me" target="_blank">Hercilio</a></p>
             <span class="social-icons">
                 <a href="https://instagram.com/hercilio.png" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                 <a href="https://linkedin.com/in/hercilioln" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
@@ -264,7 +264,7 @@
             const segundosFormatado = formatarUnidade(segundos, 'segundo', 'segundos');
 
             document.getElementById("tempo").innerHTML = 
-                `${anosFormatado}, ${mesesFormatado}, ${diasFormatado}, ${horasFormatado}, <br>${minutosFormatado}, ${segundosFormatado}`;
+                `${anosFormatado}, ${mesesFormatado}, ${diasFormatado}, <br>${horasFormatado}, ${minutosFormatado}, ${segundosFormatado}`;
         }
 
         setInterval(atualizarTempo, 1000); // Atualiza a cada segundo
