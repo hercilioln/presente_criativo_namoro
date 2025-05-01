@@ -21,7 +21,7 @@ Exemplo:
 }
 ```
 #### 2. `data.json`
-Coloque aqui a data de início do namoro. Observe que precisa ser no padrão americando ANO-MÊS-DIA HORA:MINUTOS:SEGUNDO
+Coloque aqui a data de início do namoro. Observe que precisa ser no padrão americano ANO-MÊS-DIA HORA:MINUTOS:SEGUNDO
 ```
 {
   "dataInicio": "2019-01-25 12:00:00"
