@@ -59,7 +59,7 @@ Exemplo:
 ```
 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/SEU_LINK_AQUI" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 ```
-
+---
 ### Como Hospedar
 Você pode hospedar seu site gratuitamente em serviços de sites estáticos, como:
 
