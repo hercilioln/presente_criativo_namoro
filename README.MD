@@ -51,6 +51,7 @@ Exemplo:
 ```
 <h2>João ❤️ Maria</h2>
 ```
+> Obs: você pode mudar para o emoji que quiser
 
 #### 6. `spotify.html`
 Cole o iframe da playlist do Spotify que quiser exibir.
