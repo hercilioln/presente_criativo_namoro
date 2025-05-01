@@ -3,298 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fulano e Fulana</title>
+    <title> </title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zain:wght@200;300;400;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        body {
-            font-family: 'Zain', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .container {
-            max-width: 100%;
-            margin: 0 auto;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .card {
-            background-color: #7870a7;
-            overflow: hidden;
-        }
-        .slider {
-            position: relative;
-            width: 100vh;
-            height: 100vh;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto; 
-            max-width: 100%; 
-        }
-        .slide {
-            width: 90%;
-            height: 90%;
-            object-fit: cover;
-            object-position: center;
-            position: absolute;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-            border-radius: 20px;
-        }
-        .slide.active {
-            opacity: 1;
-        }
-        .tempo-namoro {
-            padding: 10px;
-            text-align: center;
-            background-color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 0; 
-        }
-        h2 {
-            margin-top: 0;
-            color: #333;
-        }
-        #tempo {
-            font-size: 1.6em;
-            color: #666;
-        }
-        .frase-amor {
-            padding: 20px;
-            text-align: center;
-            background-color: #ff4e6d;
-            margin-top: 0; 
-        }
-        .frase-amor p {
-            font-size: 1.5em;
-            font-style: italic;
-        }
-        .coracao {
-            position: fixed;
-            font-size: 20px;
-            color: red;
-            opacity: 0;
-            z-index: 9999;
-            animation: subir 3s linear;
-        }
-        @keyframes subir {
-            0% {
-                transform: translateY(100vh) scale(0);
-                opacity: 0;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100vh) scale(1);
-                opacity: 0;
-            }
-        }
-        #verCoracoes {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            font-size: 1em;
-            background-color: #ffddee;
-            color: rgb(82, 6, 6);
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-family: 'Zain', sans-serif;
-        }
-        #verCoracoes:hover {
-            color: #f03456;
-            background-color: #792050;
-        }
-        @media (min-width: 768px) {
-            #tempo br {
-                display: none;
-            }
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .footer-left, .footer-right {
-            flex: 1;
-            min-width: 250px;
-        }
-        .footer-left {
-            text-align: left;
-        }
-        .footer-left a {
-            color: #ffd700;
-            text-decoration: none;
-        }
-        .footer-left a:hover {
-            color: #a97d05;
-        }
-        .social-icons {
-            margin-top: 10px;
-        }
-        .social-icons a {
-            color: #ffd700;
-            margin-right: 10px;
-            text-decoration: none;
-            font-size: 1.2em;
-            transition: color 0.3s ease;
-        }
-        .social-icons a:hover {
-            color: #a97d05;
-        }
-        .footer-right {
-            text-align: right;
-        }
-        .footer-right a {
-            color: #ffd700;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .footer-right a:hover {
-            color: #a97d05;
-        }
-        @media (max-width: 768px) {
-            .footer-left, .footer-right {
-                text-align: center;
-                flex: 1 0 100%;
-            }
-            .footer-right {
-                margin-top: 20px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <div class="card">
-            <div class="slider">
-                <img src="https://i.pinimg.com/564x/aa/91/34/aa91344b0f8087d02eb458296b3bc774.jpg" class="slide active">
-                <img src="https://i.pinimg.com/564x/36/82/0d/36820dabaf756b8c28c690462f1cfafe.jpg" class="slide">
-                <img src="https://i.pinimg.com/564x/8c/db/be/8cdbbedd57513ca80be5f199ed4bce88.jpg" class="slide">
-                <img src="https://i.pinimg.com/564x/92/40/16/924016464be9f62c24092bea685389ea.jpg" class="slide">
-                <img src="https://i.pinimg.com/originals/20/43/fd/2043fd2376ea434335265caad88d81f0.jpg" class="slide">
-
-                <!-- Aqui você copia a linha de cima e cola o link de mais foto -->
-            </div>
+            <div class="slider" id="sliderContainer"></div>
             <div class="tempo-namoro">
-                <h2 style="font-size: 2em;">João ❤️ Maria</h2>
+                <div id="nomesContainer"></div>
                 <h2 style="font-size: 1.5em;">Juntos há</h2>
                 <p style="font-size: 1.5em;" id="tempo"></p>
             </div>
         </div>
         <div class="frase-amor">
-            <p>"Meu amor, eu preciso te dizer o quanto você é importante para mim. Desde o momento em que te conheci, minha vida ganhou um novo sentido e cada dia ao seu lado se torna uma bênção. Você é a luz que ilumina meus dias, a paz que acalma minha alma e o sorriso que alegra meu coração. Te amar é a melhor coisa que já me aconteceu, e meu amor por você só cresce a cada dia. Você é a pessoa mais especial que eu já conheci, e sou grato por cada instante que tenho ao seu lado. Eu te amo mais do que palavras podem expressar."</p>
+            <div id="fraseContainer"></div>
             <button id="verCoracoes" onclick="explosaoCoracoes()">CLIQUE AQUI ❤️</button>
         </div>
         <div style="margin-top: 20px;">
             <h2 style="text-align: center; color: #333;">Nossa Playlist</h2>
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/44E1ZbB9YMIclzFEpHXOoX?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <div id="spotify"></div>
         </div>
     </div>
-    <footer>
-        <div class="footer-left">
-            <p>Desenvolvido por • <a href="https://hercilio.me" target="_blank">Hercilio</a></p>
-            <span class="social-icons">
-                <a href="https://instagram.com/hercilio.png" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://linkedin.com/in/hercilioln" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/hercilioln" target="_blank"><i class="fa-brands fa-github"></i></a>
-                <a href="https://twitter.com/hercilioln" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-            </span>
-        </div>
-        <div class="footer-right">
-            <p>O site é totalmente gratuito, mas se quiser e puder considere fazer uma <a href="#">doação</a> para mantermos o sistema no ar e gratuito sempre.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Slide de fotos
-        let slideIndex = 0;
-        const slides = document.getElementsByClassName("slide");
-
-        function ajustarAltura() {
-            const slider = document.querySelector('.slider');
-            slider.style.height = `${window.innerHeight}px`;
-        }
-
-        function showSlides() {
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].classList.remove("active");
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}
-            slides[slideIndex-1].classList.add("active");
-            setTimeout(showSlides, 5000); // Muda a imagem a cada 5 segundos
-        }
-
-        showSlides();
-
-        // Cálculo do tempo de namoro
-        const dataInicio = new Date("2019-01-25 12:00:00"); // Substitua pela data real de início do namoro no formato ANO-MÊS-DIA HORA:MINUTOS:SEGUNDOS
-
-        function formatarUnidade(valor, singular, plural) {
-            return valor <= 1 ? `${valor} ${singular}` : `${valor} ${plural}`;
-        }
-
-        function atualizarTempo() {
-            const agora = new Date();
-            const diferenca = agora - dataInicio;
-
-            const anos = Math.floor(diferenca / (1000 * 60 * 60 * 24 * 365));
-            const meses = Math.floor((diferenca % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
-            const dias = Math.floor((diferenca % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
-            const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
-            const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
-
-            const anosFormatado = formatarUnidade(anos, 'ano', 'anos');
-            const mesesFormatado = formatarUnidade(meses, 'mês', 'meses');
-            const diasFormatado = formatarUnidade(dias, 'dia', 'dias');
-            const horasFormatado = formatarUnidade(horas, 'hora', 'horas');
-            const minutosFormatado = formatarUnidade(minutos, 'minuto', 'minutos');
-            const segundosFormatado = formatarUnidade(segundos, 'segundo', 'segundos');
-
-            document.getElementById("tempo").innerHTML = 
-                `${anosFormatado}, ${mesesFormatado}, ${diasFormatado}, <br>${horasFormatado}, ${minutosFormatado}, ${segundosFormatado}`;
-        }
-
-        setInterval(atualizarTempo, 1000); // Atualiza a cada segundo
-        atualizarTempo(); // Chama imediatamente para exibir o tempo inicial
-
-        // Explosão de corações
-        function criarCoracao() {
-            const coracao = document.createElement('div');
-            coracao.classList.add('coracao');
-            coracao.innerHTML = '❤️😍';
-            coracao.style.left = Math.random() * 100 + 'vw';
-            coracao.style.bottom = '-20px'; 
-            document.body.appendChild(coracao);
-
-            setTimeout(() => {
-                coracao.remove();
-            }, 5000);
-        }
-
-        function explosaoCoracoes() {
-            for (let i = 0; i < 70; i++) {
-                setTimeout(criarCoracao, i * 70);
-            }
-        }
-
-        window.addEventListener('load', explosaoCoracoes);
-
-        document.getElementById('verCoracoes').addEventListener('click', function() {
-            explosaoCoracoes();
-        });
-    </script>
+    
+    <script src="data.js"></script>
+    <script src="script.js"> </script>
 </body>
 </html>
